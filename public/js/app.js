@@ -76864,6 +76864,222 @@ var FilePond = exports.FilePond = function (_React$Component) {
 
 /***/ }),
 
+/***/ "./node_modules/react-geolocated/dist-modules/components/geolocated.js":
+/*!*****************************************************************************!*\
+  !*** ./node_modules/react-geolocated/dist-modules/components/geolocated.js ***!
+  \*****************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.geoPropTypes = undefined;
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+
+var _react2 = _interopRequireDefault(_react);
+
+var _propTypes = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+function getDisplayName(WrappedComponent) {
+    return "Geolocated(" + (WrappedComponent.displayName || WrappedComponent.name || "Component") + ")";
+}
+
+var geolocated = function geolocated() {
+    var _ref = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {},
+        _ref$positionOptions = _ref.positionOptions,
+        positionOptions = _ref$positionOptions === undefined ? {
+        enableHighAccuracy: true,
+        maximumAge: 0,
+        timeout: Infinity
+    } : _ref$positionOptions,
+        _ref$userDecisionTime = _ref.userDecisionTimeout,
+        userDecisionTimeout = _ref$userDecisionTime === undefined ? null : _ref$userDecisionTime,
+        _ref$suppressLocation = _ref.suppressLocationOnMount,
+        suppressLocationOnMount = _ref$suppressLocation === undefined ? false : _ref$suppressLocation,
+        _ref$watchPosition = _ref.watchPosition,
+        watchPosition = _ref$watchPosition === undefined ? false : _ref$watchPosition,
+        _ref$geolocationProvi = _ref.geolocationProvider,
+        geolocationProvider = _ref$geolocationProvi === undefined ? typeof navigator !== "undefined" && navigator.geolocation : _ref$geolocationProvi;
+
+    return function (WrappedComponent) {
+        var result = function (_Component) {
+            _inherits(Geolocated, _Component);
+
+            function Geolocated(props) {
+                _classCallCheck(this, Geolocated);
+
+                var _this = _possibleConstructorReturn(this, (Geolocated.__proto__ || Object.getPrototypeOf(Geolocated)).call(this, props));
+
+                _this.state = {
+                    coords: null,
+                    isGeolocationAvailable: Boolean(geolocationProvider),
+                    isGeolocationEnabled: true, // be optimistic
+                    positionError: null
+                };
+
+                _this.isCurrentlyMounted = false;
+
+                _this.onPositionError = _this.onPositionError.bind(_this);
+                _this.onPositionSuccess = _this.onPositionSuccess.bind(_this);
+                _this.cancelUserDecisionTimeout = _this.cancelUserDecisionTimeout.bind(_this);
+                _this.getLocation = _this.getLocation.bind(_this);
+                return _this;
+            }
+
+            _createClass(Geolocated, [{
+                key: "cancelUserDecisionTimeout",
+                value: function cancelUserDecisionTimeout() {
+                    if (this.userDecisionTimeoutId) {
+                        clearTimeout(this.userDecisionTimeoutId);
+                    }
+                }
+            }, {
+                key: "onPositionError",
+                value: function onPositionError(positionError) {
+                    this.cancelUserDecisionTimeout();
+                    if (this.isCurrentlyMounted) {
+                        this.setState({
+                            coords: null,
+                            isGeolocationAvailable: this.state.isGeolocationAvailable,
+                            isGeolocationEnabled: false,
+                            positionError: positionError
+                        });
+                    }
+                    if (this.props.onError) {
+                        this.props.onError(positionError);
+                    }
+                }
+            }, {
+                key: "onPositionSuccess",
+                value: function onPositionSuccess(position) {
+                    this.cancelUserDecisionTimeout();
+                    if (this.isCurrentlyMounted) {
+                        this.setState({
+                            coords: position.coords,
+                            isGeolocationAvailable: this.state.isGeolocationAvailable,
+                            isGeolocationEnabled: true,
+                            positionError: null
+                        });
+                    }
+                    if (this.props.onSuccess) {
+                        this.props.onSuccess(position);
+                    }
+                }
+            }, {
+                key: "getLocation",
+                value: function getLocation() {
+                    var _this2 = this;
+
+                    if (!geolocationProvider || !geolocationProvider.getCurrentPosition || !geolocationProvider.watchPosition) {
+                        throw new Error("The provided geolocation provider is invalid");
+                    }
+
+                    var funcPosition = (watchPosition ? geolocationProvider.watchPosition : geolocationProvider.getCurrentPosition).bind(geolocationProvider);
+
+                    if (userDecisionTimeout) {
+                        this.userDecisionTimeoutId = setTimeout(function () {
+                            _this2.onPositionError();
+                        }, userDecisionTimeout);
+                    }
+
+                    this.watchId = funcPosition(this.onPositionSuccess, this.onPositionError, positionOptions);
+                }
+            }, {
+                key: "componentDidMount",
+                value: function componentDidMount() {
+                    this.isCurrentlyMounted = true;
+                    if (!suppressLocationOnMount) {
+                        this.getLocation();
+                    }
+                }
+            }, {
+                key: "componentWillUnmount",
+                value: function componentWillUnmount() {
+                    this.isCurrentlyMounted = false;
+                    this.cancelUserDecisionTimeout();
+                    if (watchPosition) {
+                        geolocationProvider.clearWatch(this.watchId);
+                    }
+                }
+            }, {
+                key: "render",
+                value: function render() {
+                    return _react2.default.createElement(WrappedComponent, _extends({}, this.state, this.props));
+                }
+            }]);
+
+            return Geolocated;
+        }(_react.Component);
+        result.displayName = getDisplayName(WrappedComponent);
+        result.propTypes = {
+            onError: _propTypes2.default.func,
+            onSuccess: _propTypes2.default.func
+        };
+        return result;
+    };
+};
+
+exports.default = geolocated;
+var geoPropTypes = exports.geoPropTypes = {
+    coords: _propTypes2.default.shape({
+        latitude: _propTypes2.default.number,
+        longitude: _propTypes2.default.number,
+        altitude: _propTypes2.default.number,
+        accuracy: _propTypes2.default.number,
+        altitudeAccuracy: _propTypes2.default.number,
+        heading: _propTypes2.default.number,
+        speed: _propTypes2.default.number
+    }),
+    isGeolocationAvailable: _propTypes2.default.bool,
+    isGeolocationEnabled: _propTypes2.default.bool,
+    positionError: _propTypes2.default.shape({
+        code: _propTypes2.default.oneOf([1, 2, 3]),
+        message: _propTypes2.default.string
+    }),
+    watchPosition: _propTypes2.default.bool
+};
+
+/***/ }),
+
+/***/ "./node_modules/react-geolocated/dist-modules/index.js":
+/*!*************************************************************!*\
+  !*** ./node_modules/react-geolocated/dist-modules/index.js ***!
+  \*************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _geolocated = __webpack_require__(/*! ./components/geolocated */ "./node_modules/react-geolocated/dist-modules/components/geolocated.js");
+
+var _geolocated2 = _interopRequireDefault(_geolocated);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+module.exports = { geolocated: _geolocated2.default, geoPropTypes: _geolocated.geoPropTypes };
+
+/***/ }),
+
 /***/ "./node_modules/react-router-dom/es/BrowserRouter.js":
 /*!***********************************************************!*\
   !*** ./node_modules/react-router-dom/es/BrowserRouter.js ***!
@@ -83218,7 +83434,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Header__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Header */ "./resources/js/components/Header.js");
 /* harmony import */ var _NewProject__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./NewProject */ "./resources/js/components/NewProject.js");
 /* harmony import */ var _Register__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./Register */ "./resources/js/components/Register.js");
-/* harmony import */ var _MapView__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./MapView */ "./resources/js/components/MapView.js");
+/* harmony import */ var _Weather__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./Weather */ "./resources/js/components/Weather.js");
+/* harmony import */ var _MapView__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./MapView */ "./resources/js/components/MapView.js");
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -83236,6 +83453,7 @@ function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.g
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
 
 
 
@@ -83267,10 +83485,10 @@ function (_Component) {
         component: _Register__WEBPACK_IMPORTED_MODULE_5__["default"]
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
         path: "/weather",
-        component: Weather
+        component: _Weather__WEBPACK_IMPORTED_MODULE_6__["default"]
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
         path: "/MapView",
-        component: _MapView__WEBPACK_IMPORTED_MODULE_6__["default"]
+        component: _MapView__WEBPACK_IMPORTED_MODULE_7__["default"]
       }))));
     }
   }]);
@@ -83927,6 +84145,122 @@ function (_Component) {
 }(react__WEBPACK_IMPORTED_MODULE_1__["Component"]);
 
 /* harmony default export */ __webpack_exports__["default"] = (Register);
+
+/***/ }),
+
+/***/ "./resources/js/components/Weather.js":
+/*!********************************************!*\
+  !*** ./resources/js/components/Weather.js ***!
+  \********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var react_geolocated__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-geolocated */ "./node_modules/react-geolocated/dist-modules/index.js");
+/* harmony import */ var react_geolocated__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_geolocated__WEBPACK_IMPORTED_MODULE_2__);
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+
+
+
+
+var Weather =
+/*#__PURE__*/
+function (_React$Component) {
+  _inherits(Weather, _React$Component);
+
+  function Weather(props) {
+    var _this;
+
+    _classCallCheck(this, Weather);
+
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(Weather).call(this, props));
+    _this.state = {
+      lat: '',
+      lon: '',
+      currentFile: [],
+      data: []
+    };
+    return _this;
+  }
+
+  _createClass(Weather, [{
+    key: "componentDidUpdate",
+    value: function componentDidUpdate(prevProps, prevState) {
+      var _this2 = this;
+
+      // console.log('new#########');
+      // console.log(prevProps);
+      // console.log('old#########');
+      // console.log(prevState);
+      // console.log('part#########');
+      // console.log(this.props.coords);
+      if (prevState.lat == '') {
+        this.setState({
+          lat: this.props.coords.latitude,
+          lon: this.props.coords.longitude
+        });
+      }
+
+      var weather = {
+        latitude: this.props.coords.latitude,
+        longitude: this.props.coords.longitude // console.log('weather send');
+        // console.log(weather);
+
+      };
+      axios__WEBPACK_IMPORTED_MODULE_0___default.a.post('/api/weather', weather).then(function (response) {
+        // console.log('######');
+        // console.log(response.data.display);
+        // console.log('zero######');
+        // // console.log(data.data.display.main);
+        _this2.setState({
+          data: response.data.display
+        }); // console.log('wehhhe soft');
+        // console.log(this.state.data);
+        // console.log('weather done');
+
+      }).catch(function (error) {
+        console.log(error.response.data.errors);
+      });
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      var data = this.state.data;
+      return !this.props.isGeolocationAvailable ? react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", null, "Your browser does not support Geolocation") : !this.props.isGeolocationEnabled ? react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", null, "Geolocation is not enabled") : this.props.coords ? react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("table", null, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("tbody", null, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("tr", null, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("td", null, "latitude"), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("td", null, this.props.coords.latitude)), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("tr", null, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("td", null, "longitude"), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("td", null, this.props.coords.longitude)), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("tr", null, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("td", null, "pressure"), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("td", null, this.state.data.pressure ? this.state.data.pressure : 'is loading...')), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("tr", null, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("td", null, "Temperature min"), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("td", null, this.state.data.temp_min ? this.state.data.temp_min : 'is loading...')), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("tr", null, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("td", null, "Temperature max"), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("td", null, this.state.data.temp_max ? this.state.data.temp_max : 'is loading...')), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("tr", null, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("td", null, "Humidity"), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("td", null, this.state.data.humidity ? this.state.data.humidity : 'is loading...')), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("tr", null, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("td", null, "Temperature"), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("td", null, this.state.data.temp ? this.state.data.temp : 'is loading...')))) : react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", null, "Getting the location data\u2026 ");
+    }
+  }]);
+
+  return Weather;
+}(react__WEBPACK_IMPORTED_MODULE_1___default.a.Component);
+
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_geolocated__WEBPACK_IMPORTED_MODULE_2__["geolocated"])({
+  positionOptions: {
+    enableHighAccuracy: false
+  },
+  userDecisionTimeout: 5000
+})(Weather));
 
 /***/ }),
 

@@ -4,6 +4,7 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom'
 import Header from './Header'
 import NewProject from './NewProject'
 import Register from './Register'
+import Weather from './Weather'
 import MapView from './MapView'
 
 class App extends Component {
