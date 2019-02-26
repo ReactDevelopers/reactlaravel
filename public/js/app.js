@@ -6051,6 +6051,44 @@ exports.push([module.i, "/*\n * FilePond 4.1.0\n * Licensed under MIT, https://o
 
 /***/ }),
 
+/***/ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./resources/js/components/forecast.css":
+/*!******************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader??ref--6-1!./node_modules/postcss-loader/src??ref--6-2!./resources/js/components/forecast.css ***!
+  \******************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "/** {\n  box-sizing: border-box;\n}*/\n\n/* Add a gray background color with some padding */\n/*body {\n  font-family: Arial;\n  padding: 20px;\n  background: #f1f1f1;\n}*/\n\n/* Header/Blog Title */\n/*.header {\n  padding: 30px;\n  font-size: 40px;\n  text-align: center;\n  background: white;\n}*/\n\n/* Create two unequal columns that floats next to each other */\n/* Left column */\n.leftcolumn {   \n  float: left;\n  width: 72%;\n  padding-left: 40px;\n}\n\n/* Right column */\n.rightcolumn {\n  float: left;\n  width: 25%;\n  padding-left: 20px;\n}\n\n/* Fake image */\n.fakeimg {\n  background-color: #aaa;\n  width: 100%;\n  padding: 20px;\n}\n\n/* Add a card effect for articles */\n.card {\n   background-color: white;\n   padding: 20px;\n   margin-top: 20px;\n}\n\n/* Clear floats after the columns */\n.row:after {\n  content: \"\";\n  display: table;\n  clear: both;\n  padding-left: 30px;\n}\n\n/* Footer */\n.footer {\n  padding: 20px;\n  text-align: center;\n  background: #ddd;\n  margin-top: 20px;\n}\n\n/* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */\n@media screen and (max-width: 800px) {\n  .leftcolumn, .rightcolumn {   \n    width: 100%;\n    padding: 0;\n  }\n}\n\n/*.map{\n  position: relative;\n}*/\n/*.map div div {*/\n    /* position: absolute; */\n/*    width: 50% !important;\n    height: 50% !important;\n}*/", ""]);
+
+// exports
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./resources/js/components/layouts/header.css":
+/*!************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader??ref--6-1!./node_modules/postcss-loader/src??ref--6-2!./resources/js/components/layouts/header.css ***!
+  \************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "/* Footer */\n.active {\n    color: powderblue !important;\n}\n\n", ""]);
+
+// exports
+
+
+/***/ }),
+
 /***/ "./node_modules/css-loader/lib/css-base.js":
 /*!*************************************************!*\
   !*** ./node_modules/css-loader/lib/css-base.js ***!
@@ -83431,11 +83469,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_dom__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/es/index.js");
-/* harmony import */ var _Header__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Header */ "./resources/js/components/Header.js");
-/* harmony import */ var _NewProject__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./NewProject */ "./resources/js/components/NewProject.js");
-/* harmony import */ var _Register__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./Register */ "./resources/js/components/Register.js");
-/* harmony import */ var _Weather__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./Weather */ "./resources/js/components/Weather.js");
-/* harmony import */ var _MapView__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./MapView */ "./resources/js/components/MapView.js");
+/* harmony import */ var _layouts_Header__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./layouts/Header */ "./resources/js/components/layouts/Header.js");
+/* harmony import */ var _Home__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./Home */ "./resources/js/components/Home.js");
+/* harmony import */ var _NewProject__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./NewProject */ "./resources/js/components/NewProject.js");
+/* harmony import */ var _Register__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./Register */ "./resources/js/components/Register.js");
+/* harmony import */ var _Weather__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./Weather */ "./resources/js/components/Weather.js");
+/* harmony import */ var _MapView__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./MapView */ "./resources/js/components/MapView.js");
+/* harmony import */ var _Forecast__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./Forecast */ "./resources/js/components/Forecast.js");
+/* harmony import */ var _layouts_header_css__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./layouts/header.css */ "./resources/js/components/layouts/header.css");
+/* harmony import */ var _layouts_header_css__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(_layouts_header_css__WEBPACK_IMPORTED_MODULE_10__);
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -83453,6 +83495,9 @@ function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.g
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+
+
 
 
 
@@ -83477,18 +83522,25 @@ function (_Component) {
   _createClass(App, [{
     key: "render",
     value: function render() {
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["BrowserRouter"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Header__WEBPACK_IMPORTED_MODULE_3__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Switch"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["BrowserRouter"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_layouts_Header__WEBPACK_IMPORTED_MODULE_3__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Switch"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
+        exact: true,
+        path: "/",
+        component: _Home__WEBPACK_IMPORTED_MODULE_4__["default"]
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
         path: "/create",
-        component: _NewProject__WEBPACK_IMPORTED_MODULE_4__["default"]
+        component: _NewProject__WEBPACK_IMPORTED_MODULE_5__["default"]
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
         path: "/register",
-        component: _Register__WEBPACK_IMPORTED_MODULE_5__["default"]
+        component: _Register__WEBPACK_IMPORTED_MODULE_6__["default"]
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
         path: "/weather",
-        component: _Weather__WEBPACK_IMPORTED_MODULE_6__["default"]
+        component: _Weather__WEBPACK_IMPORTED_MODULE_7__["default"]
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
         path: "/MapView",
-        component: _MapView__WEBPACK_IMPORTED_MODULE_7__["default"]
+        component: _MapView__WEBPACK_IMPORTED_MODULE_8__["default"]
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
+        path: "/Forecast",
+        component: _Forecast__WEBPACK_IMPORTED_MODULE_9__["default"]
       }))));
     }
   }]);
@@ -83500,10 +83552,10 @@ react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render(react__WEBPACK_IMPORTED_
 
 /***/ }),
 
-/***/ "./resources/js/components/Header.js":
-/*!*******************************************!*\
-  !*** ./resources/js/components/Header.js ***!
-  \*******************************************/
+/***/ "./resources/js/components/Forecast.js":
+/*!*********************************************!*\
+  !*** ./resources/js/components/Forecast.js ***!
+  \*********************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -83511,51 +83563,10 @@ react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render(react__WEBPACK_IMPORTED_
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/es/index.js");
-
-
-
-var Header = function Header() {
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("nav", {
-    className: "navbar navbar-expand-md navbar-light navbar-laravel"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "container"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-    className: "navbar-brand",
-    to: "/"
-  }, "Home")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-    className: "navbar-brand",
-    to: "create"
-  }, "Login"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-    className: "navbar-brand",
-    to: "register"
-  }, "SignUp"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-    className: "navbar-brand",
-    to: "weather"
-  }, "Weather"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-    className: "navbar-brand",
-    to: "MapView"
-  }, "Map"));
-};
-
-/* harmony default export */ __webpack_exports__["default"] = (Header);
-
-/***/ }),
-
-/***/ "./resources/js/components/MapView.js":
-/*!********************************************!*\
-  !*** ./resources/js/components/MapView.js ***!
-  \********************************************/
-/*! exports provided: MapView, default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MapView", function() { return MapView; });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var google_maps_react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! google-maps-react */ "./node_modules/google-maps-react/dist/index.js");
-/* harmony import */ var google_maps_react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(google_maps_react__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _MapView_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./MapView.js */ "./resources/js/components/MapView.js");
+/* harmony import */ var _Weather_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Weather.js */ "./resources/js/components/Weather.js");
+/* harmony import */ var _forecast_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./forecast.css */ "./resources/js/components/forecast.css");
+/* harmony import */ var _forecast_css__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_forecast_css__WEBPACK_IMPORTED_MODULE_3__);
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -83576,9 +83587,159 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 
 
 
+
+
+var h200 = {
+  height: '200%'
+};
+
+var Forecast =
+/*#__PURE__*/
+function (_Component) {
+  _inherits(Forecast, _Component);
+
+  function Forecast() {
+    _classCallCheck(this, Forecast);
+
+    return _possibleConstructorReturn(this, _getPrototypeOf(Forecast).apply(this, arguments));
+  }
+
+  _createClass(Forecast, [{
+    key: "render",
+    value: function render() {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "row"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "leftcolumn"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "card"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "TITLE HEADING"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h5", null, "Title description, Dec 7, 2017"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "fakeimg",
+        style: h200
+      }, "Image"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Some text.."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco."))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "rightcolumn"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "card"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "Weather"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Weather_js__WEBPACK_IMPORTED_MODULE_2__["default"], null)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "card"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "Map")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "map"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_MapView_js__WEBPACK_IMPORTED_MODULE_1__["default"], null)))));
+    }
+  }]);
+
+  return Forecast;
+}(react__WEBPACK_IMPORTED_MODULE_0__["Component"]);
+
+/* harmony default export */ __webpack_exports__["default"] = (Forecast);
+
+/***/ }),
+
+/***/ "./resources/js/components/Home.js":
+/*!*****************************************!*\
+  !*** ./resources/js/components/Home.js ***!
+  \*****************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+
+
+var Home =
+/*#__PURE__*/
+function (_Component) {
+  _inherits(Home, _Component);
+
+  function Home() {
+    _classCallCheck(this, Home);
+
+    return _possibleConstructorReturn(this, _getPrototypeOf(Home).apply(this, arguments));
+  }
+
+  _createClass(Home, [{
+    key: "render",
+    value: function render() {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "HELLO"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Welcome to the Map Resolutor"));
+    }
+  }]);
+
+  return Home;
+}(react__WEBPACK_IMPORTED_MODULE_0__["Component"]);
+
+/* harmony default export */ __webpack_exports__["default"] = (Home);
+
+/***/ }),
+
+/***/ "./resources/js/components/MapView.js":
+/*!********************************************!*\
+  !*** ./resources/js/components/MapView.js ***!
+  \********************************************/
+/*! exports provided: MapView, default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MapView", function() { return MapView; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var google_maps_react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! google-maps-react */ "./node_modules/google-maps-react/dist/index.js");
+/* harmony import */ var google_maps_react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(google_maps_react__WEBPACK_IMPORTED_MODULE_1__);
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; var ownKeys = Object.keys(source); if (typeof Object.getOwnPropertySymbols === 'function') { ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) { return Object.getOwnPropertyDescriptor(source, sym).enumerable; })); } ownKeys.forEach(function (key) { _defineProperty(target, key, source[key]); }); } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _nonIterableSpread(); }
+
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance"); }
+
+function _iterableToArray(iter) { if (Symbol.iterator in Object(iter) || Object.prototype.toString.call(iter) === "[object Arguments]") return Array.from(iter); }
+
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = new Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+
+
 var mapStyles = {
   width: '50%',
-  height: '50%'
+  height: '55%'
 };
 var MapView =
 /*#__PURE__*/
@@ -83607,7 +83768,15 @@ function (_Component) {
       //Hides or the shows the infoWindow
       activeMarker: {},
       //Shows the active marker upon click
-      selectedPlace: {}
+      selectedPlace: {},
+      naming: {},
+      markers: [{
+        name: "Current position",
+        position: {
+          lat: 37.77,
+          lng: -122.42
+        }
+      }]
     };
 
     _this.onMarkerClick = function (props, marker, e) {
@@ -83628,20 +83797,112 @@ function (_Component) {
     };
 
     _this.onMouseoverMarker = function (props, marker, e) {
-      return _this.setState({
+      // console.log(props);
+      // console.log(props.mapCenter.lat);
+      // console.log('propsssssssss');
+      var geocoder = new google.maps.Geocoder();
+      var myLatlng = new google.maps.LatLng(_this.state.userLocation.lat, _this.state.userLocation.lng);
+      var dragEndPositions;
+      geocoder.geocode({
+        'latLng': myLatlng
+      }, function (results, status) {
+        if (status == google.maps.GeocoderStatus.OK) {
+          if (results[0]) {
+            // console.log("iam geocoder: "+results[0].formatted_address);
+            dragEndPositions = results[0].formatted_address; // this.setState({
+            //   selectedPlace: dragEndPositions
+            // });
+
+            this.setState({
+              naming: dragEndPositions
+            });
+          }
+        }
+      }.bind(_assertThisInitialized(_assertThisInitialized(_this))));
+
+      _this.setState({
         selectedPlace: props,
         activeMarker: marker,
         showingInfoWindow: true
       });
+
+      var lat = props.mapCenter.lat;
+      var lng = props.mapCenter.lng;
+
+      _this.setState(function (prevState) {
+        markers: {
+          position: {
+            lat, lng;
+          }
+        }
+
+        ; // return { markers };
+      });
     };
 
     _this.onMouseoutMarker = function (props) {
+      // console.log(props);
+      // console.log('props');
       if (_this.state.showingInfoWindow) {
         _this.setState({
           showingInfoWindow: false,
           activeMarker: null
         });
       }
+    };
+
+    _this.onMarkerDragEnd = function (coord, index) {
+      var latLng = coord.latLng;
+      var lat = latLng.lat();
+      var lng = latLng.lng(); // console.log(this .state.userLocation);
+      // console.log('userLocationbegin');
+
+      _this.setState({
+        userLocation: {
+          lat: lat,
+          lng: lng
+        }
+      }); // console.log(this .state.userLocation);
+      // console.log('userLocationend');
+
+
+      _this.setState(function (prevState) {
+        var markers = _toConsumableArray(_this.state.markers);
+
+        markers[index] = _objectSpread({}, markers[index], {
+          position: {
+            lat: lat,
+            lng: lng
+          }
+        });
+        return {
+          markers: markers
+        };
+      });
+
+      var geocoder = new google.maps.Geocoder();
+      var myLatlng = new google.maps.LatLng(lat, lng); // console.log(lat,lng);
+      // console.log('lat,lng');
+
+      var dragEndPositions;
+      geocoder.geocode({
+        'latLng': myLatlng
+      }, function (results, status) {
+        if (status == google.maps.GeocoderStatus.OK) {
+          if (results[0]) {
+            // console.log("well iam geocoder: "+results[0].formatted_address);
+            dragEndPositions = results[0].formatted_address; // this.setState({
+            //   selectedPlace: dragEndPositions
+            // });
+
+            this.setState({
+              naming: dragEndPositions
+            }); // console.log('desi');
+            // console.log(this.state);
+          }
+        }
+      }.bind(_assertThisInitialized(_assertThisInitialized(_this)))); // console.log(this.state);
+      // console.log('this.statethis.state');
     };
 
     return _this;
@@ -83657,6 +83918,25 @@ function (_Component) {
             latitude = _position$coords.latitude,
             longitude = _position$coords.longitude;
         console.log(position);
+        var geocoder = new google.maps.Geocoder();
+        var myLatlng = new google.maps.LatLng(latitude, longitude);
+        var dragEndPositions;
+        geocoder.geocode({
+          'latLng': myLatlng
+        }, function (results, status) {
+          if (status == google.maps.GeocoderStatus.OK) {
+            if (results[0]) {
+              // console.log("iam geocoder: "+results[0].formatted_address);
+              dragEndPositions = results[0].formatted_address; // this.setState({
+              //   selectedPlace: dragEndPositions
+              // });
+
+              this.setState({
+                naming: dragEndPositions
+              });
+            }
+          }
+        }.bind(_this2));
 
         _this2.setState({
           userLocation: {
@@ -83675,6 +83955,8 @@ function (_Component) {
   }, {
     key: "render",
     value: function render() {
+      var _this3 = this;
+
       var _this$state = this.state,
           loading = _this$state.loading,
           userLocation = _this$state.userLocation;
@@ -83689,11 +83971,21 @@ function (_Component) {
         google: google,
         initialCenter: userLocation,
         zoom: 10
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(google_maps_react__WEBPACK_IMPORTED_MODULE_1__["Marker"], {
-        onMouseout: this.onMouseoutMarker,
-        onMouseover: this.onMouseoverMarker,
-        onClick: this.onMarkerClick,
-        name: 'Current Location'
+      }, this.state.markers.map(function (marker, index) {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(google_maps_react__WEBPACK_IMPORTED_MODULE_1__["Marker"] //position={{ lat: marker.postion.lat?marker.postion.lat:-34.397, lng: marker.postion.lng?marker.postion.lng:150.644 }}
+        , {
+          onMouseout: _this3.onMouseoutMarker,
+          lat: marker.position.lat,
+          lng: marker.position.lng,
+          onMouseover: _this3.onMouseoverMarker,
+          onClick: _this3.onMarkerClick,
+          name: _this3.state.naming ? _this3.state.naming : 'helleo',
+          draggable: true,
+          key: index,
+          onDragend: function onDragend(t, map, coord) {
+            return _this3.onMarkerDragEnd(coord, index);
+          }
+        });
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(google_maps_react__WEBPACK_IMPORTED_MODULE_1__["InfoWindow"], {
         marker: this.state.activeMarker,
         visible: this.state.showingInfoWindow,
@@ -84261,6 +84553,112 @@ function (_React$Component) {
   },
   userDecisionTimeout: 5000
 })(Weather));
+
+/***/ }),
+
+/***/ "./resources/js/components/forecast.css":
+/*!**********************************************!*\
+  !*** ./resources/js/components/forecast.css ***!
+  \**********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../../node_modules/css-loader??ref--6-1!../../../node_modules/postcss-loader/src??ref--6-2!./forecast.css */ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./resources/js/components/forecast.css");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {}
+
+/***/ }),
+
+/***/ "./resources/js/components/layouts/Header.js":
+/*!***************************************************!*\
+  !*** ./resources/js/components/layouts/Header.js ***!
+  \***************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/es/index.js");
+
+
+
+var Header = function Header() {
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("nav", {
+    className: "navbar navbar-expand-md navbar-light navbar-laravel"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "container"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["NavLink"], {
+    exact: true,
+    className: "navbar-brand",
+    to: "/"
+  }, "Home")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["NavLink"], {
+    className: "navbar-brand",
+    to: "/create"
+  }, "Login"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["NavLink"], {
+    className: "navbar-brand",
+    to: "/register"
+  }, "SignUp"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["NavLink"], {
+    className: "navbar-brand",
+    to: "/weather"
+  }, "Weather"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["NavLink"], {
+    className: "navbar-brand",
+    to: "/MapView"
+  }, "Map"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["NavLink"], {
+    className: "navbar-brand",
+    to: "/Forecast"
+  }, "Forecast"));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Header);
+
+/***/ }),
+
+/***/ "./resources/js/components/layouts/header.css":
+/*!****************************************************!*\
+  !*** ./resources/js/components/layouts/header.css ***!
+  \****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../../../node_modules/css-loader??ref--6-1!../../../../node_modules/postcss-loader/src??ref--6-2!./header.css */ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./resources/js/components/layouts/header.css");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {}
 
 /***/ }),
 
