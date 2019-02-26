@@ -11,11 +11,11 @@
     <title>LaravelReact</title>
 
     <!-- Styles -->
-    <link href="//laravelreactmix.herokuapp.com/css/app.css" rel="stylesheet">
+    <link href="{{asset('css/app.css')}}" rel="stylesheet">
 </head>
 <body>
     <div id="app"></div>
 
-    <script src="//laravelreactmix.herokuapp.com/js/app.js"></script>
+    <script src="{{asset('js/app.js')}}"></script>
 </body>
 </html>
